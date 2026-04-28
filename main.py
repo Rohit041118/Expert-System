@@ -12,7 +12,7 @@ from chatbot import ChatbotSession
 from expert_system import get_recommendation
 import uuid
 
-app = Flask(__name__, template_folder='.', static_folder='.', static_url_path='')
+app = Flask(__name__)
 app.secret_key = "fashion-expert-secret-2024-xK9mP"   # For session management
 
 

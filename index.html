@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ── Meta ── -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI-powered Fashion Recommendation Expert System — Get personalised outfit suggestions based on occasion, weather, and style using forward-chaining rule-based AI." />
+  <meta name="keywords" content="fashion, expert system, AI, outfit recommendation, chatbot" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <title>Fashion AI Stylist — Expert System</title>
+
+  <!-- ── Favicon (emoji) ── -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👗</text></svg>" />
+
+  <!-- ── Stylesheet ── -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     APP SHELL
+══════════════════════════════════════════════════════════ -->
+<div class="app-shell" role="main">
+
+  <!-- ── Header ── -->
+  <header class="app-header" role="banner">
+    <div class="header-brand">
+      <div class="header-logo" aria-hidden="true">✨</div>
+      <div class="header-text">
+        <h1>Fashion AI Stylist</h1>
+        <p>Rule-Based Expert System · Forward Chaining</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="status-dot" aria-label="System online">Online</div>
+      <button class="btn-reset" id="btn-reset" aria-label="Restart conversation" title="Start Over">
+        🔄 Start Over
+      </button>
+    </div>
+  </header>
+
+  <!-- ── Progress Bar ── -->
+  <div class="progress-wrap hidden" id="progress-wrap" aria-label="Conversation progress">
+    <div class="progress-label">
+      <span>Gathering your style profile…</span>
+      <span id="progress-label">Step 0 of 5</span>
+    </div>
+    <div class="progress-bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar-fill" id="progress-fill" style="width: 0%"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       WELCOME SCREEN (shown before chat starts)
+  ══════════════════════════════════════════════ -->
+  <div id="welcome-screen" class="welcome-screen" role="region" aria-label="Welcome">
+
+    <div class="welcome-icon" aria-hidden="true">✨</div>
+
+    <h2>Your AI Fashion Stylist</h2>
+
+    <p>
+      Powered by a rule-based <strong>Expert System</strong> with forward-chaining inference.
+      Answer 5 quick questions and get a personalised outfit recommendation with a full AI explanation.
+    </p>
+
+    <div class="feature-pills" aria-label="Features">
+      <div class="feature-pill">🧠 30+ AI Rules</div>
+      <div class="feature-pill">💬 Chatbot Flow</div>
+      <div class="feature-pill">✨ Outfit Cards</div>
+      <div class="feature-pill">🔍 Explanation Engine</div>
+    </div>
+
+    <button class="btn-start" id="btn-start" aria-label="Start the fashion consultation">
+      ✨ Start Style Consultation
+    </button>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       MAIN CHAT UI (hidden until started)
+  ══════════════════════════════════════════════ -->
+  <div id="main-chat" class="hidden" style="display:flex; flex-direction:column; flex:1; overflow:hidden;">
+
+    <!-- Chat Messages Window -->
+    <div id="chat-window"
+         class="chat-window"
+         role="log"
+         aria-live="polite"
+         aria-label="Chat conversation">
+    </div>
+
+    <!-- Quick-Reply Options -->
+    <div id="options-wrap" class="options-wrap" role="group" aria-label="Quick reply options"></div>
+
+    <!-- Hint -->
+    <p id="hint-text" class="hint-text" aria-live="polite"></p>
+
+    <!-- Input Bar -->
+    <div class="input-bar" role="form" aria-label="Send a message">
+      <label for="user-input" class="sr-only">Type your message</label>
+      <input
+        type="text"
+        id="user-input"
+        class="input-field"
+        placeholder="Type here or pick an option above…"
+        autocomplete="off"
+        aria-label="Your message"
+        maxlength="120"
+      />
+      <button class="btn-send" id="send-btn" aria-label="Send message" title="Send">
+        ➤
+      </button>
+    </div>
+
+  </div><!-- /main-chat -->
+
+</div><!-- /app-shell -->
+
+<!-- ── JavaScript ── -->
+<script src="js/chat.js"></script>
+
+</body>
+</html>
